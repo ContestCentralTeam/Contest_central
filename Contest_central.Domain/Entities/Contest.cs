@@ -12,5 +12,6 @@ public class Contest
     public string Name { get; set; }
     public int Duration { get; set; }
     public Guid Creator_id { get; set; }
-    public string Profile_pic { get; set; }
+    List<Problem> problems { get; set; }
+    List<User> users { get; set; }
 }

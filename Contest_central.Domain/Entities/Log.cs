@@ -11,10 +11,9 @@ public class Log
     public Guid Contest_id { get; set; }
     public string Name { get; set; }
     public int Duration { get; set; }
-    public string Creator { get; set; }
+    public int Penality { get; set; }
+    public Guid Creator_id { get; set; }
     public int Solved_count { get; set; }
     public int rank { get; set; }
     public int Average_time { get; set; }
-    public int Start_time { get; set; }
-    public int End_time { get; set;}
 }
