@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Contest_central.Application.DTOs.Problems
 {
-    internal class CreateProblemDto
+    public class CreateProblemDto
     {
+        public string Name { get; set; }
+        public string Country { get; set; }
+        public string University { get; set; }
+        public string Url { get; set;}
     }
 }

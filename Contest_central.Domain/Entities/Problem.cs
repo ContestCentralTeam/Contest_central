@@ -11,6 +11,5 @@ public class Problem
     public string Name { get; set; }
     public string Country { get; set; }
     public string University { get; set; }
-    public Guid Group_id { get; set; }
     public string url { get; set; }
 }

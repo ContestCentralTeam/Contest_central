@@ -13,4 +13,12 @@
     <Folder Include="Persistence\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contest_central.Domain\Contest_central.Domain.csproj" />
+    <!-- <ProjectReference Include="..\Contest_central.Persistence\Contest_central.Persistence.csproj" /> -->
+  </ItemGroup>
 </Project>
