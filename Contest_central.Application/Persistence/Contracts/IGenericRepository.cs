@@ -1,10 +1,11 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Contest_central.Application.Persistence.Contracts
-{
+namespace Contest_central.Application.Persistence.Contracts;
+
     public interface IGenericRepository<T> where T : class
     {
         Task<IReadOnlyList<T>> GetAll();
@@ -13,5 +14,5 @@ namespace Contest_central.Application.Persistence.Contracts
         Task<T> Add(T entity);
         Task Update(T entity);
         Task Delete(T entity);
-    }
+
 }
