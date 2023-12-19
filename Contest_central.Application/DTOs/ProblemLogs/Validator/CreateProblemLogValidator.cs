@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Contest_central.Application.DTOs.ProblemLogs.Validator
 {
-    internal class CreateProblemLogValidator
+    public class CreateProblemLogValidator: AbstractValidator<CreateProblemLogDto>
     {
+        private readonly IProblemLogRepository _problemLogRepository;
+
+        public CreateProblemLogValidator(IProblemLogRepository problemLogRepository)
+        {
+            _problemLogRepository = problemLogRepository;
+            Include(new IProblemLogValidator(_problemLogRepository));
+        }
     }
 }
