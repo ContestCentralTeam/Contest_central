@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Contest_central.Application.DTOs.ProblemLogs
 {
-    internal class CreateProblemLogDto
+    public class CreateProblemLogDto
     {
+        public Guid Contest_id { get; set; }
+        public Guid User_id { get; set; }
+        public bool Is_solved { get; set; }
+        public int Problem_id { get; set; }
     }
 }
