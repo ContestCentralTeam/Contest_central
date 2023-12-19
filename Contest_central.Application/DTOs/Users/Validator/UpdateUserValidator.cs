@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 
 namespace Contest_central.Application.DTOs.Users.Validator
 {
-    internal class UpdateUserValidator
+    public class UpdateUserValidator : AbstractValidator<CreateUserDto>
     {
+
     }
 }
