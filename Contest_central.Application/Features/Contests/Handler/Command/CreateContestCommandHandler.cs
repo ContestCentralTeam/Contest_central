@@ -1,7 +1,9 @@
-﻿using Contest_central.Application.DTOs.Contests.Validator;
+﻿using AutoMapper;
+using Contest_central.Application.DTOs.Contests.Validator;
 using Contest_central.Application.Features.Contests.Request.Command;
 using Contest_central.Application.Persistence.Contracts;
 using Contest_central.Application.Responses;
+using Contest_central.Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -14,9 +16,11 @@ namespace Contest_central.Application.Features.Contests.Handler.Command
     public class CreateContestCommandHandler : IRequestHandler<CreateContestCommand, BaseResponseClass>
     {
         private readonly IContestRepository _contestrepository ;
-        public CreateContestCommandHandler(IContestRepository contestrepository)
+        private readonly IMapper _mapper ;
+        public CreateContestCommandHandler(IContestRepository contestrepository, IMapper mapper)
         {
             this._contestrepository = contestrepository;
+            this._mapper = mapper;
         }
         public async Task<BaseResponseClass> Handle(CreateContestCommand request, CancellationToken cancellationToken)
         {
@@ -25,12 +29,15 @@ namespace Contest_central.Application.Features.Contests.Handler.Command
             var response = new BaseResponseClass();
             if (validationResult.IsValid)
             {
+                var constest = _mapper.Map<Contest>(request.CreateContestDto);
+                var result = await _contestrepository.Add(constest);
                 response.Message = "Contest created succesfully";
                 response.Success = true;
                 response.Error = new List<string>();
             }
             else
             {
+                
                 response.Success= false;
                 response.Message = "Contest creation failed";
                 response.Error = validationResult.Errors.Select(x => x.ErrorMessage).ToList();

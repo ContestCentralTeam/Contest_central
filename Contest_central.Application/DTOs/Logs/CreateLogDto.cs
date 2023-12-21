@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Contest_central.Application.DTOs.Logs
+namespace Contest_central.Application.DTOs.Logs;
+public class CreateLogDto
 {
-    internal class CreateLogDto
-    {
-    }
+    public Guid Contest_id { get; set; }
+    public string Name { get; set; }
+    public int Duration { get; set; }
+    public int Penality { get; set; }
+    public Guid Creator_id { get; set; }
+    public int Solved_count { get; set; }
+    public int rank { get; set; }
+    public int Average_time { get; set; }
 }
