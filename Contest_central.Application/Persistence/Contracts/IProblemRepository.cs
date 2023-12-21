@@ -6,7 +6,7 @@ using Contest_central.Domain.Entities;
 
 namespace Contest_central.Application.Persistence.Contracts
 {
-    public interface IProblemRepository: IGenericRepository<ProblemLog>
+    public interface IProblemRepository: IGenericRepository<Problem>
     {   
     }
 }

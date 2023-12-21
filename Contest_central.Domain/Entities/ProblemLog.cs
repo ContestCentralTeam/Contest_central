@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contest_central.Domain.Entities.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Contest_central.Domain.Entities;
 
-public class ProblemLog
+public class ProblemLog : BaseEntity
 {
-    public Guid Id { get; set; }
     public Guid Contest_id { get; set; }
     public Guid User_id { get; set; }
     public bool Is_solved { get; set; }
