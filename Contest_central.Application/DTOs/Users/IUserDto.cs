@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Contest_central.Application.DTOs.Users
 {
-    internal class IUserDto
+    public interface IUserDto
     {
+        public string Name { get; set; }   
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
     }
 }

@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FluentValidation;
 
 namespace Contest_central.Application.DTOs.Users.Validator
 {
-    internal class UpdateUserValidator
+    public class UpdateUserValidator : AbstractValidator<CreateUserDto>
     {
+        private readonly IUserValidator _userValidator;
+        
+        public UpdateUserValidator(IUserValidator userValidator)
+        {
+            _userValidator = userValidator;
+            Include(new IUserValidator());
+            RuleFor(u => u.Id)
+            .NotEmpty().WithMessage("{PropertyName} must required");
+
+        }
+
     }
 }
