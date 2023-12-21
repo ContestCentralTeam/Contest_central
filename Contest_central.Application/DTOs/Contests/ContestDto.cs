@@ -9,7 +9,6 @@ namespace Contest_central.Application.DTOs.Contests
 {
     public class ContestDto
     {
-        public DateTime DateTime { get; set; }
         public string Name { get; set; }
         public int Duration { get; set; }
         public Guid Creator_id { get; set; }
