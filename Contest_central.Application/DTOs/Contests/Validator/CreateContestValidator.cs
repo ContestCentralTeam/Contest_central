@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using Contest_central.Application.DTOs.Contest;
 using System;
 using System.Collections.Generic;

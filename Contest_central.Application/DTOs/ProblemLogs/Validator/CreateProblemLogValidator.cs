@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Contest_central.Application.Persistence.Contracts;
+using FluentValidation;
 
 namespace Contest_central.Application.DTOs.ProblemLogs.Validator
 {

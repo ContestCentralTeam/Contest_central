@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Contest_central.Application.Persistence.Contracts;
+using FluentValidation;
 
 namespace Contest_central.Application.DTOs.ProblemLogs.Validator
 {
@@ -32,6 +34,17 @@ namespace Contest_central.Application.DTOs.ProblemLogs.Validator
                 .NotEmpty()
                 .WithMessage("Problem_id is required");
             
+            RuleFor(c => c.User_id)
+                .NotEmpty()
+                .WithMessage("User_id is required");
+            
+            RuleFor(u => u.Is_solved)
+                .NotEmpty()
+                .WithMessage("Is_solved is required");
+            
+            RuleFor(u => u.Problem_id)
+                .NotEmpty()
+                .WithMessage("Problem_id is required");
         }
         
     }
